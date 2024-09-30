@@ -1,4 +1,5 @@
 #import "/strings/en.typ": * 
+#import "/pages/cover.typ": make-cover, default-label
 
 #set page(
   paper: "a4",
@@ -11,5 +12,11 @@
   )
 )
 
-#include "/pages/cover.typ"
+#make-cover(
+  info-entries: (
+    "School Affiliated":  "Nice",
+    "Major": lorem(3)),
+)
+
+
 #include "/pages/notes.typ"

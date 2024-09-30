@@ -1,84 +1,100 @@
 #import "/strings/en.typ": *
-#block(width: 100%, height: 100%)[
-  #set align(center)
-  #set text(size: 14pt)
 
+#let default-label = (
+  title: se-cover-title,
+  student-number: "Student Number",
+  degree: "Graduate School",
+  school-name: "Nanjing University of Information Science & Technology",
+)
 
-  *Student Number: #box(
-    inset:  (x: 10pt),
-    outset: (bottom: 0.5mm),
-    stroke: (bottom: 0.5pt),
-  )[202352620025]*
+#let default-entries = (
+  "School Affiliated":  (lorem(1), lorem(3)),
+  "Major":  "人工智能",
+  "Student Name":  "",
+  "Degree Type":  "",
+  "Suprevisor Name":  "",
+  "Proposal Date":  "",
+  "Enrollment Date":  "",
 
-  #v(3em)
+)
 
-  #block(width: 65%, clip: true, inset: (bottom: -20pt))[
-    #image("/assets/nuist-logo-text.png")
-  ]
-
-  #v(3em)
-
-  #text(size: 18pt, weight: "bold", se-cover-title)
-
-  #v(2em)
-
-  #let fill-in(body) = box(
-    inset:  (x: 10pt),
-    outset: (bottom: 0.5mm),
-    stroke: (bottom: 0.5pt),
-    body,
+#let info(key, value) = {
+  let info-key(body) = rect(
+    height: 1.8em, 
+    stroke: none,
+    inset: (x: 0pt, bottom: 1pt),
+    text(weight: "bold", bottom-edge: "descender", body)
   )
 
+  let make-entry(body) = rect(
+        height: 1.8em, 
+        width: 100%,
+        stroke: (bottom: 0.8pt + black),
+        text(bottom-edge: "descender", body)
+  )
 
-  #let info(key, value) = {
-    let info-key(body) = rect(
-      height: 1.8em, 
-      stroke: none,
-      inset: (x: 0pt, bottom: 1pt),
-      text(weight: "bold", bottom-edge: "descender", body)
-    )
+  let value-entries = if type(value) == array { value } else { (value, ) }
+  let entries = value-entries.map(make-entry)
+  let last-entry = entries.pop()
 
-    let make-entry(body) = rect(
-          height: 1.8em, 
-          width: 100%,
-          stroke: (bottom: 0.8pt + black),
-          // stroke: 1pt + black,
-          // inset: (x: 0pt, bottom: -0.5pt),
-          text(bottom-edge: "descender", body)
-    )
+  return (
+      info-key(text(bottom-edge: "descender", key)),
+      ..entries.map((b) => (b, [])).flatten(),
+      last-entry,
+  )
+}
+    
+#let make-cover(
+  label: default-label,
+  student-number: "2023XXXX01",
+  date: "2024 - 09 - 03",
+  info-entries: (),
+) = [
+  #let label = default-label + label
+  #let info-entries = default-entries + info-entries 
 
-    let value-entries = if type(value) == array { value } else { (value, ) }
-    let entries = value-entries.map(make-entry)
-    let last-entry = entries.pop()
+  #block(width: 100%, height: 100%)[
+    #set align(center)
+    #set text(size: 14pt)
 
-    return (
-        info-key(text(bottom-edge: "descender", key)),
-        ..entries.map((b) => (b, [])).flatten(),
-        last-entry,
-    )
-  }
+    #text(weight: "bold")[
+      #label.student-number:
+      #box(
+        inset:  (x: 10pt),
+        outset: (bottom: 0.5mm),
+        stroke: (bottom: 0.5pt),
+        student-number,
+      )
+    ]
+
+    #v(3em)
+
+    #block(width: 65%, clip: true, inset: (bottom: -20pt))[
+      #image("/assets/nuist-logo-text.png")
+    ]
+
+    #v(3em)
+
+    #text(size: 18pt, weight: "bold", label.title)
+
+    #v(2em)
 
 
-  #box(width: 70%, grid(
-    columns: (auto, 2fr), 
-    column-gutter: 1em,
-    row-gutter: 0.2em,
-    align: (right + horizon, center),
-    ..info("School Affiliated", (lorem(1), lorem(3))),
-    ..info("Major", "人工智能"),
-    ..info("Degree Type", ""),
-    ..info("Suprevisor Name", ""),
-    ..info("Proposal Date", ""),
-    ..info("Student Name", ""),
-    ..info("Enrollment Date", ""),
-  ))
+    #box(width: 70%, grid(
+      columns: (auto, 2fr), 
+      column-gutter: 1em,
+      row-gutter: 0.2em,
+      align: (right + horizon, center),
+      ..info-entries.pairs().map(i => info(i.at(0), i.at(1))).flatten()
+    ))
 
 
-  #align(bottom, [
-    Graduate School \
-    #v(2pt)
-    Nanjing University of Information Science & Technology \
-    #v(2pt)
-    2024 - 09 - 21
-  ])
+    #align(bottom, [
+      #label.degree \
+      #v(2pt)
+      #label.school-name \
+      #v(2pt)
+      #date
+    ])
+  ]
 ]
