@@ -8,42 +8,46 @@
 )
 
 #let default-entries = (
-  "School Affiliated":  (lorem(1), lorem(3)),
-  "Major":  "人工智能",
-  "Student Name":  "",
-  "Degree Type":  "",
-  "Suprevisor Name":  "",
-  "Proposal Date":  "",
-  "Enrollment Date":  "",
-
+  "School Affiliated": (lorem(1), lorem(3)),
+  "Major": "人工智能",
+  "Student Name": "",
+  "Degree Type": "",
+  "Suprevisor Name": "",
+  "Proposal Date": "",
+  "Enrollment Date": "",
 )
 
 #let info(key, value) = {
   let info-key(body) = rect(
-    height: 1.8em, 
+    height: 1.8em,
     stroke: none,
     inset: (x: 0pt, bottom: 1pt),
-    text(weight: "bold", bottom-edge: "descender", body)
+    text(weight: "bold", bottom-edge: "descender", body),
   )
 
   let make-entry(body) = rect(
-        height: 1.8em, 
-        width: 100%,
-        stroke: (bottom: 0.8pt + black),
-        text(bottom-edge: "descender", body)
+    height: 1.8em,
+    width: 100%,
+    stroke: (bottom: 0.8pt + black),
+    text(bottom-edge: "descender", body),
   )
 
-  let value-entries = if type(value) == array { value } else { (value, ) }
+  let value-entries = if type(value) == array {
+    value
+  } else {
+    (value,)
+  }
+
   let entries = value-entries.map(make-entry)
   let last-entry = entries.pop()
 
   return (
-      info-key(text(bottom-edge: "descender", key)),
-      ..entries.map((b) => (b, [])).flatten(),
-      last-entry,
+    info-key(text(bottom-edge: "descender", key)),
+    ..entries.map(b => (b, [])).flatten(),
+    last-entry,
   )
 }
-    
+
 #let make-cover(
   label: default-label,
   student-number: "2023XXXX01",
@@ -51,7 +55,7 @@
   info-entries: (),
 ) = [
   #let label = default-label + label
-  #let info-entries = default-entries + info-entries 
+  #let info-entries = default-entries + info-entries
 
   #block(width: 100%, height: 100%)[
     #set align(center)
@@ -60,7 +64,7 @@
     #text(weight: "bold")[
       #label.student-number:
       #box(
-        inset:  (x: 10pt),
+        inset: (x: 10pt),
         outset: (bottom: 0.5mm),
         stroke: (bottom: 0.5pt),
         student-number,
@@ -80,21 +84,27 @@
     #v(2em)
 
 
-    #box(width: 70%, grid(
-      columns: (auto, 2fr), 
-      column-gutter: 1em,
-      row-gutter: 0.2em,
-      align: (right + horizon, center),
-      ..info-entries.pairs().map(i => info(i.at(0), i.at(1))).flatten()
-    ))
+    #box(
+      width: 70%,
+      grid(
+        columns: (auto, 2fr),
+        column-gutter: 1em,
+        row-gutter: 0.2em,
+        align: (right + horizon, center),
+        ..info-entries.pairs().map(i => info(i.at(0), i.at(1))).flatten()
+      ),
+    )
 
 
-    #align(bottom, [
-      #label.degree \
-      #v(2pt)
-      #label.school-name \
-      #v(2pt)
-      #date
-    ])
+    #align(
+      bottom,
+      [
+        #label.degree \
+        #v(2pt)
+        #label.school-name \
+        #v(2pt)
+        #date
+      ],
+    )
   ]
 ]

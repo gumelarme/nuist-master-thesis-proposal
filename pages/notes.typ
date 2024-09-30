@@ -1,4 +1,4 @@
-#import "/strings/en.typ": * 
+#import "/strings/en.typ": *
 
 #box(width: 100%)[
   #set align(center)
