@@ -1,13 +1,14 @@
 #text(size: 1.5em, "1. Thesis Proposal report")
 
-#let title-sources = list(marker: $ballot$, 
-        [04 National Social Science Planning/Fund Program],
-        [05 Humanities/Social Science Research Program of Ministry of Education],
-        [06 National Natural Science Foundation of China (NSFC)],
-        [09 Program Funded by the Provincial Government (Autonomous Region/Municipality directly under the Central Government)],
-        [15 Program Entrusted by Enterprises and Institiutions],
-        [16 Self-selected Program of School],
-        [99 Others],
+#let title-sources = list(
+  marker: $ballot$,
+  [04 National Social Science Planning/Fund Program],
+  [05 Humanities/Social Science Research Program of Ministry of Education],
+  [06 National Natural Science Foundation of China (NSFC)],
+  [09 Program Funded by the Provincial Government (Autonomous Region/Municipality directly under the Central Government)],
+  [15 Program Entrusted by Enterprises and Institiutions],
+  [16 Self-selected Program of School],
+  [99 Others],
 )
 
 #show table.cell: it => {
@@ -21,7 +22,9 @@
 #let table-len = 7
 #let table-rows = 4
 
-#block(width: 100%, height: 100%, 
+#block(
+  width: 100%,
+  height: 100%,
   table(
     align: horizon + center,
     //     tt   rd   ts    note  tt    opt  pc
@@ -53,6 +56,6 @@
     [ ],
 
     table.cell(colspan: table-len , align: top + left, [Proposal Contents])
-  )
+  ),
 )
 

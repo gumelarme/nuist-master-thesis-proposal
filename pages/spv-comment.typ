@@ -1,4 +1,7 @@
-#text(size: 1.3em, "3. Comments of Supervisor, Thesis Proposal Panel, School Affiliated")
+#text(
+  size: 1.3em,
+  "3. Comments of Supervisor, Thesis Proposal Panel, School Affiliated",
+)
 
 #block(
   height: 100% - 2.5em,
@@ -8,16 +11,23 @@
 )[
   Supervisor's comprehensive opinion on the thesis proposal:
 
-  #align(bottom, stack(
-    dir: ltr,
-    rect(width: 50%, stroke: none, [Note: Extra pages may be added]),
-    rect(width: 50%, stroke: none, [
-      #set align(center)
-      Supervisor (Signature)
-      #v(6em)
-      YY  MM  DD
-    ]),
-  ))
+  #align(
+    bottom,
+    stack(
+      dir: ltr,
+      rect(width: 50%, stroke: none, [Note: Extra pages may be added]),
+      rect(
+        width: 50%,
+        stroke: none,
+        [
+          #set align(center)
+          Supervisor (Signature)
+          #v(6em)
+          YY MM DD
+        ],
+      ),
+    ),
+  )
 ]
 
 #let signatures = [
@@ -36,36 +46,49 @@
     #align(bottom)[
       #set enum(start: 2)
 
-      + Voting Results: 
+      + Voting Results:
 
-        Proposal Panel in Attendance 
+        Proposal Panel in Attendance
 
-      + Proposal Panel Chair (Signature)  #signatures \
-         Proposal Panel Members (Signatures) \
-         #{(signatures * 3)} \
-         #{(signatures * 3)}
+      + Proposal Panel Chair (Signature) #signatures \
+        Proposal Panel Members (Signatures) \
+        #{
+          (signatures * 3)
+        } \
+        #{
+          (signatures * 3)
+        }
       + Thesis Proposal Date
       #align(right)[YY MM DD]
     ]
 
-  ]
+  ],
 )
 
 #rect(
   stroke: 0.5pt + black,
-  width: 100%, 
-  height: 100%, 
+  width: 100%,
+  height: 100%,
   [
     Opinion of the School Affiliated:
-    #align(bottom + right, [
-      #block(inset: 2em, align(center, [
-        Person in Charge of the School (Seal)
-        #v(4em)
-        YY MM DD
-      ]))
-    ])
+    #align(
+      bottom + right,
+      [
+        #block(
+          inset: 2em,
+          align(
+            center,
+            [
+              Person in Charge of the School (Seal)
+              #v(4em)
+              YY MM DD
+            ],
+          ),
+        )
+      ],
+    )
 
-  ]
+  ],
 )
 
 
