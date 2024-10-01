@@ -45,3 +45,32 @@
 #let tt-interdis = "Insterdisciplinary Research"
 #let tt-other = "Others"
 
+#let section-2 = "2. Thesis Work Implementation Plan"
+#let section-2-1 = "(1) The Thesis Theoritical and Hardware Requirement Level should be Met and Results"
+#let section-2-2 = "(2) Specific Work Progress and Schedule"
+
+#let th-start-end-dates = [Start and End \ Dates]
+#let th-work-content = "Work Content and Requirements"
+
+#let section-3 = "3. Comments of Supervisor, Thesis Proposal Panel, School Affiliated"
+#let spv-opinion = "Supervisor's comprehensive opinion on the thesis proposal:"
+#let spv-signature = "Supervisor (Signature)"
+#let extra-page = "Note: Extra pages may be added"
+
+#let thesis-prop-records = [
+    *Thesis Proposal Records* 
+    (Ph.D proposal panel should consist of 5-7 people, Masters proposoal should consist of 3-5 people.)
+]
+
+#let prop-panel-opinion = "Proposal Panel Opinion:"
+#let voting-result = "Voting Results:"
+#let prop-panel-attendance = "Proposal Panel in Attendance"
+#let people = "People"
+#let pass = "Pass"
+#let fail = "Fail"
+#let prop-panel-chair = "Proposal Panel Chair (Signature)"
+#let prop-panel-members = "Proposal Panel Members (Signature)"
+#let thesis-prop-date = "Thesis Proposal Date"
+
+#let school-opinion = "Opinion of the School Affiliated:"
+#let person-in-charge = "Person-in-Charge of the School(Seal)"

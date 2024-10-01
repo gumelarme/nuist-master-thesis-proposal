@@ -1,27 +1,28 @@
+#import "/strings/zh.typ" as lang
 #text(
   size: 1.3em,
-  "3. Comments of Supervisor, Thesis Proposal Panel, School Affiliated",
+  lang.section-3,
 )
 
 #block(
-  height: 100% - 2.5em,
+  height: 100% - 3em,
   width: 100%,
   stroke: 0.5pt + black,
   inset: 0.5em,
 )[
-  Supervisor's comprehensive opinion on the thesis proposal:
+  #lang.spv-opinion
 
   #align(
     bottom,
     stack(
       dir: ltr,
-      rect(width: 50%, stroke: none, [Note: Extra pages may be added]),
+      rect(width: 50%, stroke: none, lang.extra-page),
       rect(
         width: 50%,
         stroke: none,
         [
           #set align(center)
-          Supervisor (Signature)
+          #lang.spv-signature
           #v(6em)
           YY MM DD
         ],
@@ -40,25 +41,28 @@
   width: 100%,
   height: 100%,
   [
-    *Thesis Proposal Records* (Ph.D proposal panel should consist of 5-7 people, Masters proposoal should consist of 3-5 people.)
-    + Proposal Panel Opinion:
+
+    #lang.thesis-prop-records
+    + #lang.prop-panel-opinion
 
     #align(bottom)[
       #set enum(start: 2)
 
-      + Voting Results:
+      + #lang.voting-result:
 
-        Proposal Panel in Attendance
+        #lang.prop-panel-attendance
 
-      + Proposal Panel Chair (Signature) #signatures \
-        Proposal Panel Members (Signatures) \
+      + #lang.prop-panel-chair #signatures \
+        #lang.prop-panel-members \
+
         #{
           (signatures * 3)
         } \
         #{
           (signatures * 3)
         }
-      + Thesis Proposal Date
+      + #lang.thesis-prop-date
+
       #align(right)[YY MM DD]
     ]
 
@@ -70,24 +74,17 @@
   width: 100%,
   height: 100%,
   [
-    Opinion of the School Affiliated:
-    #align(
-      bottom + right,
+    #lang.school-opinion
+    #set align(bottom + right)
+    #block(
+      inset: 2em,
       [
-        #block(
-          inset: 2em,
-          align(
-            center,
-            [
-              Person in Charge of the School (Seal)
-              #v(4em)
-              YY MM DD
-            ],
-          ),
-        )
-      ],
+        #set align(center)
+        #lang.person-in-charge
+        #v(4em)
+        YY MM DD
+      ]
     )
-
   ],
 )
 

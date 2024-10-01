@@ -44,3 +44,33 @@
 #let tt-interdis = "交叉学科研究"
 #let tt-other = "其他题目类型"
 #let th-notes = "备注"
+
+#let section-2 = "二、论文工作实施计划"
+#let section-2-1 = "(一) 论文的理论、硬件要求、应达到的策划高难度和结果"
+#let section-2-2 = "(二) 论文工作的具体进度与安排"
+
+#let th-start-end-dates = "起讫日期"
+#let th-work-content = "工作内容和要求"
+
+#let section-3 = "三、指导教师、开题指导小组、培养学院对开题报告的意见"
+#let spv-opinion = "指导教师对开题报告的综合意见"
+#let spv-signature = "指导教师（签名）"
+#let extra-page = "注：本页栏目内容填写可另加付页"
+
+#let thesis-prop-records = [
+    *开题情况记录* 
+    (博士研究生开题指导小组成员应为5-7人；硕士研究生开题指导小组成员应为3-5人)
+]
+
+#let prop-panel-opinion = "开题指导小组意见："
+#let voting-result = "投票结果："
+#let prop-panel-attendance = "开题指导小组出席"
+#let people = "人"
+#let pass = "通过"
+#let fail = "不通过"
+#let prop-panel-chair = "开题指导小组组长"
+#let prop-panel-members = "开题指导小组成员"
+#let thesis-prop-date = "开题时间"
+
+#let school-opinion = "培养学院意见"
+#let person-in-charge = "学院负责人（签章）"
