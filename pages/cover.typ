@@ -1,20 +1,10 @@
-#import "/strings/en.typ": *
+#import "/strings/en.typ" as lang
 
 #let default-label = (
-  title: se-cover-title,
-  student-number: "Student Number",
-  degree: "Graduate School",
-  school-name: "Nanjing University of Information Science & Technology",
-)
-
-#let default-entries = (
-  "School Affiliated": (lorem(1), lorem(3)),
-  "Major": "人工智能",
-  "Student Name": "",
-  "Degree Type": "",
-  "Suprevisor Name": "",
-  "Proposal Date": "",
-  "Enrollment Date": "",
+  title: lang.cover-title,
+  student-number: lang.student-number,
+  degree: lang.degree,
+  school-name: lang.school-name,
 )
 
 #let info(key, value) = {
@@ -52,10 +42,10 @@
   label: default-label,
   student-number: "2023XXXX01",
   date: "2024 - 09 - 03",
-  info-entries: (),
+  info-entries: (:),
 ) = [
   #let label = default-label + label
-  #let info-entries = default-entries + info-entries
+  #let info-entries = lang.cover-entries + info-entries
 
   #block(width: 100%, height: 100%)[
     #set align(center)

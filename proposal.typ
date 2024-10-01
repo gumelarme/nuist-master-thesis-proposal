@@ -8,7 +8,7 @@
 
 #set text(font: ("Times New Roman"))
 
-#make-cover(info-entries: ("School Affiliated": "Nice", "Major": lorem(3)))
+#make-cover()
 
 #include "/pages/notes.typ"
 #include "/pages/report.typ"
