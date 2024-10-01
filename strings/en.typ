@@ -21,3 +21,27 @@
   "Enrollment Date": "",
 )
 
+#let section-1 = "Thesis Proposal report"
+#let title-sources =(
+  [04 National Social Science Planning/Fund Program],
+  [05 Humanities/Social Science Research Program of Ministry of Education],
+  [06 National Natural Science Foundation of China (NSFC)],
+  [09 Program Funded by the Provincial Government (Autonomous Region/Municipality directly under the Central Government)],
+  [14 Program Entrusted by Enterprises and Institiutions],
+  [16 Self-selected Program of School],
+  [99 Others],
+)
+
+#let th-thesis-title = "Thesis Title"
+#let th-research-dir = [Research \ Direction]
+#let th-title-source = "Title Source"
+#let th-title-type = "Title Type"
+#let th-proposal-content = "Proposal Contents"
+#let th-notes = "Notes"
+
+#let tt-engineering = "Engineering Technology"
+#let tt-applied = "Applied Technology"
+#let tt-theoritical = "Theoritical Research"
+#let tt-interdis = "Insterdisciplinary Research"
+#let tt-other = "Others"
+

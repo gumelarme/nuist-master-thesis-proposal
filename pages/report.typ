@@ -1,14 +1,10 @@
-#text(size: 1.5em, "1. Thesis Proposal report")
+#import "/strings/zh.typ" as lang
+
+#text(size: 1.5em, lang.section-1)
 
 #let title-sources = list(
   marker: $ballot$,
-  [04 National Social Science Planning/Fund Program],
-  [05 Humanities/Social Science Research Program of Ministry of Education],
-  [06 National Natural Science Foundation of China (NSFC)],
-  [09 Program Funded by the Provincial Government (Autonomous Region/Municipality directly under the Central Government)],
-  [15 Program Entrusted by Enterprises and Institiutions],
-  [16 Self-selected Program of School],
-  [99 Others],
+  ..lang.title-sources,
 )
 
 #show table.cell: it => {
@@ -33,21 +29,21 @@
     columns: (auto,) + (table-len - 2) * (2fr, ) + (1fr, ),
     stroke: 0.5pt + black,
 
-    [Thesis Title], table.cell(colspan: table-len - 1, []),
-    [Research \ Direction], table.cell(colspan: table-len - 1, []),
+    lang.th-thesis-title, table.cell(colspan: table-len - 1, []),
+    lang.th-research-dir, table.cell(colspan: table-len - 1, []),
 
-    table.cell(rowspan: 2, [Title Source]),
+    table.cell(rowspan: 2, lang.th-title-source),
     table.cell(rowspan: 2, align: horizon + left, colspan: table-len - 2, title-sources),
-    [Notes],
+    lang.th-notes,
     [],
 
-    table.cell(rowspan: 2, [Title Type]),
-    [Engineering Technology],
-    [Applied Research],
-    [Theoritical Research],
-    [Insterdisciplinary Research],
+    table.cell(rowspan: 2, lang.th-title-type),
+    lang.tt-engineering,
+    lang.tt-applied,
+    lang.tt-theoritical,
+    lang.tt-interdis,
 
-    table.cell(rowspan: 2, [Others]),
+    table.cell(rowspan: 2, lang.tt-other),
     table.cell(rowspan: 2, []),
     // Empty column below the title types
     [ ],
@@ -55,7 +51,7 @@
     [ ],
     [ ],
 
-    table.cell(colspan: table-len , align: top + left, [Proposal Contents])
+    table.cell(colspan: table-len , align: top + left, lang.th-proposal-content)
   ),
 )
 

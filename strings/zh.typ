@@ -21,4 +21,26 @@
   "入学年月": "",
 )
 
+#let section-1 = "一、论文开题报告"
+#let title-sources = (
+  [04 国家社科规划、基金项目],
+  [05 教育部人文、社会科学研究项目],
+  [06 国家自然科学基金项目],
+  [09 省（自治区，直辖市）项目],
+  [14 企事业单位委托横向项目],
+  [16 学校自选项目],
+  [99 其他],
+)
 
+#let th-thesis-title = "论文题目"
+#let th-research-dir = [研究方向]
+#let th-title-source = [题目来源 \ (请在相应 \ 类型内打 $checkmark$)]
+#let th-title-type = "题目类型"
+#let th-proposal-content = "开题报告内容"
+
+#let tt-engineering = "工程技术"
+#let tt-applied = "应用研究"
+#let tt-theoritical = "理论研究"
+#let tt-interdis = "交叉学科研究"
+#let tt-other = "其他题目类型"
+#let th-notes = "备注"
