@@ -12,3 +12,4 @@
 
 #include "/pages/notes.typ"
 #include "/pages/report.typ"
+#include "/pages/work-plan.typ"
