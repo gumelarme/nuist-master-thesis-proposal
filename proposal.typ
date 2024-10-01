@@ -11,3 +11,4 @@
 #make-cover(info-entries: ("School Affiliated": "Nice", "Major": lorem(3)))
 
 #include "/pages/notes.typ"
+#include "/pages/report.typ"
