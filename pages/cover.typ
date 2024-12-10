@@ -1,4 +1,4 @@
-#import "/strings/en.typ" as lang
+#import "/strings/zh.typ" as lang
 
 #let default-label = (
   title: lang.cover-title,
